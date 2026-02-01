@@ -1,0 +1,73 @@
+# -----------------------------
+# Python
+# -----------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.log
+
+# -----------------------------
+# Environments
+# -----------------------------
+.venv/
+env/
+venv/
+ENV/
+*.env
+*.env.*
+
+# -----------------------------
+# Django
+# -----------------------------
+db.sqlite3
+/staticfiles/
+/media/
+*.pyc
+local_settings.py
+settings_local.py
+
+# -----------------------------
+# Flask / FastAPI
+# -----------------------------
+instance/
+*.db
+*.sqlite
+
+# -----------------------------
+# IDEs
+# -----------------------------
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# -----------------------------
+# macOS / Linux
+# -----------------------------
+.DS_Store
+*.swp
+*~
+Thumbs.db
+
+# -----------------------------
+# Pytest / Coverage
+# -----------------------------
+htmlcov/
+.coverage
+.cache
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+
+# -----------------------------
+# Logs
+# -----------------------------
+*.log
+logs/
+.env
