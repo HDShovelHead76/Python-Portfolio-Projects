@@ -29,7 +29,7 @@ Python-Portfolio-Projects/
 
 | Project | Description | Technologies | Status |
 |---------|-------------|--------------|--------|
-| Coming Soon | Projects being added incrementally | Python 3.x | 🔄 In Progress |
+| [Django Job Application Form](./early-projects/django-job-application-form/) | Web form with email integration for job applications | Django 5.2.5, Bootstrap, SQLite | ✅ Complete |
 
 
 
