@@ -1,0 +1,22 @@
+MVP:
+User can see a list of hotels
+User can book a hotel
+User receive confirmation receipt
+
+Classes: (Look for Nouns)
+User
+Hotel
+Reservations
+
+
+Extended Features:
+User can pay by creditcard
+User can add experiences
+
+Principals:
+DRY: Do not Repeat Yourself
+@abstractmethod: define structure that MUST be used by all Classes which Inherits the ABC.
+@classmethod:
+@magicmethod:
+@properties:
+@staticmethod:
