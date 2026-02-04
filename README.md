@@ -30,6 +30,7 @@ Python-Portfolio-Projects/
 | Project | Description | Technologies | Status |
 |---------|-------------|--------------|--------|
 | [Django Job Application Form](./early-projects/django-job-application-form/) | Web form with email integration for job applications | Django 5.2.5, Bootstrap, SQLite | ✅ Complete |
+| [Hotel Booking System](./early-projects/hotel-booking-app/) | CLI hotel reservation system with OOP architecture and credit card validation | Python 3.13, Pandas, OOP | ✅ Complete |
 
 
 
