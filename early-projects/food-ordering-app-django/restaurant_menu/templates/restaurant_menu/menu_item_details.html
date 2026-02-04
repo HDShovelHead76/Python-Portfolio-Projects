@@ -1,0 +1,15 @@
+{% extends 'restaurant_menu/base.html' %}
+
+
+{% block content %}
+<div class="mt-4 mb-4">
+    <h1>{{ item.emoji }} {{ item.meal }}</h1>
+    <p><strong>Description:</strong> {{ item.description }}</p>
+    <p><strong>Category:</strong> {{ item.category|title }}</p>
+    <p><strong>Price:</strong> ${{ item.price }}</p>
+    <p><strong>Status:</strong> {{ item.get_status_display }}</p>
+    <p><strong>Author:</strong> {{ item.author.username }}</p>
+    <p><strong>Created:</strong> {{ item.date_created|date:"M d, Y" }}</p>
+</div>
+<a href="{% url 'home' %}" class="btn btn-secondary">🏠 Back to Menu</a>
+{% endblock %}
