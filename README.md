@@ -33,7 +33,7 @@ Python-Portfolio-Projects/
 | [Hotel Booking System](./early-projects/hotel-booking-app/) | CLI hotel reservation system with OOP architecture and credit card validation | Python 3.13, Pandas, OOP | ✅ Complete |
 | [Food Ordering App - Django](./early-projects/food-ordering-app-django/) | Restaurant menu management system with QR code integration | Django 5.2.5, Python 3.13, SQLite | ✅ Complete |
 | [Flask Job Application Form](./early-projects/flask-job-application-form/) | Advanced job application system with resume upload and MySQL database | Flask 3.1.1, MySQL, SQLAlchemy | ✅ Complete |
-
+| [Weather Data API](./early-projects/weather-api-app/) | REST API for European historical temperature data (1860-2022) | Flask 3.1.1, Pandas, ECA&D Dataset | ✅ Complete |
 
 
 ## 🛠️ Getting Started
