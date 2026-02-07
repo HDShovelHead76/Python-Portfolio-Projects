@@ -1,0 +1,111 @@
+####################################
+# PYTHON (GENERAL)
+####################################
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+pip-wheel-metadata/
+.python-version
+
+####################################
+# VIRTUAL ENVIRONMENTS
+####################################
+.venv/
+venv/
+env/
+ENV/
+.virtualenv/
+
+####################################
+# DJANGO
+####################################
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+static_root/
+
+####################################
+# FLASK
+####################################
+instance/
+.webassets-cache
+
+####################################
+# ENV / SECRETS
+####################################
+.env
+.env.*
+*.env
+secrets.json
+config.json
+credentials.json
+
+####################################
+# TEST / COVERAGE
+####################################
+.coverage
+coverage.xml
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+
+####################################
+# JUPYTER
+####################################
+.ipynb_checkpoints
+
+####################################
+# IDEs / EDITORS
+####################################
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+####################################
+# OS FILES (macOS, Windows, Linux)
+####################################
+.DS_Store
+.DS_Store?
+._*          # AppleDouble files from external drives
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+####################################
+# NODE / FRONTEND (just in case)
+####################################
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+####################################
+# LOCAL SANDBOX / NON-GIT PROJECTS
+####################################
+non-git-early-projects/
+sandbox/
+scratch/
+
+####################################
+# MISC
+####################################
+*.swp
+*.tmp
+*.bak
+*.orig
+*.pyc
