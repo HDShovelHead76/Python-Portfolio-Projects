@@ -117,3 +117,9 @@ web-build/
 mobile_app/
 node_modules/
 
+# ----------------------------
+# Local sandbox / boring stuff
+# ----------------------------
+non-git-early-projects/
+
+
