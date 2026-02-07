@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container py-4">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+
+      <!-- Chat Card -->
+      <div class="card shadow-lg rounded-4">
+        <div class="card-header text-center bg-primary text-white fw-bold">
+          🧠 Chat with Einstein
+        </div>
+
+        <!-- Chat Body -->
+        <div class="card-body chat-box" id="chat-box"
+             style="height: 500px; overflow-y: auto; background-color: #f7f7f9;">
+          <div class="d-flex justify-content-start mb-2">
+            <div class="p-2 rounded-3 bg-light border" style="max-width: 75%;">
+              <strong>🧠 Einstein:</strong> Hello Warrior! Ready to think like Einstein? 🤓
+              <br><small class="text-muted">[{{ now }}]</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chat Input -->
+        <div class="card-footer">
+          <form id="chat-form" class="d-flex">
+            <input type="text" id="user-input" class="form-control me-2"
+                   placeholder="Type your question or greeting..." autocomplete="off" required>
+            <button class="btn btn-success me-2" type="submit">Send 🚀</button>
+            <button class="btn btn-secondary me-2" type="button" id="clear-chat">Clear 🗑️</button>
+            <button class="btn btn-info" type="button" id="save-chat">Save 💾</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  const form = document.getElementById("chat-form");
+  const input = document.getElementById("user-input");
+  const chatBox = document.getElementById("chat-box");
+  const clearBtn = document.getElementById("clear-chat");
+  const saveBtn = document.getElementById("save-chat");
+
+  // Store chat history locally
+  let chatHistory = [];
+
+  function getCurrentTime() {
+    const now = new Date();
+    return now.toLocaleString();
+  }
+
+  function appendMessage(sender, message, isUser=false) {
+    const bubble = document.createElement("div");
+    bubble.classList.add("d-flex", "mb-2");
+
+    const timestamp = `<br><small class="text-muted">[${getCurrentTime()}]</small>`;
+
+    if (isUser) {
+      bubble.classList.add("justify-content-end");
+      bubble.innerHTML = `
+        <div class="p-2 rounded-3 bg-primary text-white" style="max-width: 75%;">
+          <strong>🙋 You:</strong> ${message} ${timestamp}
+        </div>`;
+    } else {
+      bubble.classList.add("justify-content-start");
+      bubble.innerHTML = `
+        <div class="p-2 rounded-3 bg-light border" style="max-width: 75%;">
+          <strong>🧠 Einstein:</strong> ${message} ${timestamp}
+        </div>`;
+    }
+
+    chatBox.appendChild(bubble);
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+    // Save to local chat history
+    chatHistory.push({ sender: isUser ? "You" : "Einstein", message, time: getCurrentTime() });
+  }
+
+  // Send user message
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const message = input.value.trim();
+    if (!message) return;
+
+    appendMessage("You", message, true);
+    input.value = "";
+
+    try {
+      const response = await fetch("{% url 'ask_einstein' %}", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "X-CSRFToken": "{{ csrf_token }}" },
+        body: JSON.stringify({ message })
+      });
+
+      const data = await response.json();
+      appendMessage("Einstein", data.reply);
+    } catch (err) {
+      appendMessage("Einstein", "⚠️ Oops, something went wrong.");
+    }
+  });
+
+  // Clear chat
+  clearBtn.addEventListener("click", () => {
+    chatBox.innerHTML = "";
+    chatHistory = [];
+  });
+
+  // Save chat as TXT
+  saveBtn.addEventListener("click", () => {
+    if (!chatHistory.length) return alert("No messages to save!");
+    let textContent = "";
+    chatHistory.forEach(msg => {
+      textContent += `[${msg.time}] ${msg.sender}: ${msg.message}\n`;
+    });
+
+    const blob = new Blob([textContent], { type: "text/plain" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "einstein_chat.txt";
+    link.click();
+    URL.revokeObjectURL(link.href);
+  });
+</script>
+
+{% endblock %}
