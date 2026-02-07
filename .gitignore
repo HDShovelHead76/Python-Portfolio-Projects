@@ -122,4 +122,9 @@ node_modules/
 # ----------------------------
 non-git-early-projects/
 
+# ----------------------------
+# Secured Credentials 
+# ----------------------------
+secured-credentials/
+
 
