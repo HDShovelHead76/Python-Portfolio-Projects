@@ -1,0 +1,8 @@
+# Einstein CLI Agent Dependencies
+# Core dependencies for LangChain agent with Google Gemini
+
+python-dotenv==1.0.1              # Environment variable management
+langchain==0.3.0                  # LangChain core framework
+langchain-google-genai==2.0.0     # Google Gemini LLM integration
+langchain-community==0.3.0        # Community tools (chat history)
+langchain-core==0.3.0             # LangChain core components
