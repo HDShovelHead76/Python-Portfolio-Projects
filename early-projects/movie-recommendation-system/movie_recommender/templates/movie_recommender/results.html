@@ -1,0 +1,44 @@
+{% extends "movie_recommender/base.html" %}
+{% block content %}
+
+<h1>🎬 Recommendation Results</h1>
+
+{% if error %}
+    <p style="color: red;"><strong>Error:</strong> {{ error }}</p>
+{% endif %}
+
+<h2>Recommendation Type: {{ rec_type|title }}</h2>
+
+{% if results %}
+    <table border="1" cellpadding="5" style="margin-top: 20px;">
+        <tr>
+            <th>Title</th>
+            {% if rec_type == "popularity" %}
+                <th>Number of Ratings</th>
+            {% elif rec_type == "content" %}
+                <th>Overview</th>
+            {% elif rec_type == "collaborative" %}
+                <th>Predicted Rating</th>
+            {% endif %}
+        </tr>
+        {% for movie in results %}
+        <tr>
+            <td>{{ movie.title }}</td>
+            {% if rec_type == "popularity" %}
+                <td>{{ movie.rating_count }}</td>
+            {% elif rec_type == "content" %}
+                <td>{{ movie.overview|truncatewords:20 }}</td>
+            {% elif rec_type == "collaborative" %}
+                <td>{{ movie.rating|floatformat:2 }}</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>No recommendations found.</p>
+{% endif %}
+
+<hr>
+<p><a href="{% url 'home' %}">← Back to Home</a></p>
+
+{% endblock %}

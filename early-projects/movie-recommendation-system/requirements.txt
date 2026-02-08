@@ -1,0 +1,17 @@
+# Django Movie Recommendation System Dependencies
+
+# Web Framework
+Django==5.2.5
+python-dotenv==1.0.1
+
+# Data Science & Machine Learning
+numpy==2.3.2
+pandas==2.3.2
+scikit-learn==1.7.1
+scipy==1.16.1
+
+# Jupyter (for development/notebooks)
+ipykernel==6.30.1
+ipython==9.4.0
+jupyter_client==8.6.3
+jupyter_core==5.8.1

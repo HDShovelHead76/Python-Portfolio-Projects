@@ -1,0 +1,58 @@
+{% extends "movie_recommender/base.html" %}
+{% block content %}
+
+<body>
+    <h1>Movie Recommendation System</h1>
+
+    <!-- --- Top 5 Popular Movies --- -->
+    <h2>Top 5 Popular Movies</h2>
+    {% if top_movies %}
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Title</th>
+            <th>Number of Ratings</th>
+        </tr>
+        {% for movie in top_movies %}
+        <tr>
+            <td>{{ movie.title }}</td>
+            <td>{{ movie.rating_count }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>No popular movies available.</p>
+    {% endif %}
+
+    <hr>
+
+    <!-- --- Random Movie Suggestion --- -->
+    <h2>Random Movie Suggestion</h2>
+    {% if random_movie %}
+    <p>Try watching: <strong>{{ random_movie }}</strong></p>
+    {% endif %}
+
+    <hr>
+
+    <!-- --- Recommendation Form --- -->
+    <h2>Get Your Recommendations</h2>
+    <form action="{% url 'results' %}" method="get">
+        <label>Recommendation Type:</label>
+        <select name="rec_type">
+            <option value="popularity">Popularity Based</option>
+            <option value="content">Content Based</option>
+            <option value="collaborative">Collaborative Filtering</option>
+        </select>
+        <br><br>
+
+        <label>Movie Title (Content-Based):</label>
+        <input type="text" name="movie_title" value="{{ random_movie }}">
+        <br><br>
+
+        <label>User ID (Collaborative):</label>
+        <input type="number" name="user_id" min="1" value="1">
+        <br><br>
+
+        <button type="submit">Get Recommendations</button>
+    </form>
+</body>
+{% endblock %}
