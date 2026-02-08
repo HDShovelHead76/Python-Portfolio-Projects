@@ -36,6 +36,7 @@ Python-Portfolio-Projects/
 | [Flask Job Application Form](./early-projects/flask-job-application-form/) | Advanced job application system with resume upload and MySQL database | Flask 3.1.1, MySQL, SQLAlchemy | ✅ Complete |
 | [Weather Data API](./early-projects/weather-api-app/) | REST API for European historical temperature data (1860-2022) | Flask 3.1.1, Pandas, ECA&D Dataset | ✅ Complete |
 | [Student Management System](./early-projects/student-management-mysql/) | Desktop GUI application for managing student records with MySQL backend | PyQt5, MySQL, Python 3.13 | ✅ Complete |
+| [Movie Recommendation System](./early-projects/movie-recommendation-system/) | Full-stack ML web app with three recommendation algorithms: popularity-based, content-based filtering (TF-IDF), and collaborative filtering (SVD) | Django 5.2.5, pandas, scikit-learn, NumPy, Python 3.13 | ✅ Complete |
 | [Einstein AI Agent](./early-projects/einstein-ai-agent-langchain/) | Conversational AI with Einstein personality, Langchain agents, and Todoist integration | Django 5.2.5, Langchain, Google Gemini AI, Python 3.13 | ✅ Complete |
 | [CLI AI Agent](./early-projects/cli-ai-agent-langchain/) | Command-line AI agent for task management and general knowledge with multi-tool integration | Langchain, Google Gemini AI, Todoist API, Python 3.13 | ✅ Complete |
 | [Einstein CLI Agent](./early-projects/einstein-cli-agent/) | Interactive CLI agent with Albert Einstein personality and conversational memory | LangChain 0.3.x, Google Gemini 2.5 Flash, Python 3.x | ✅ Complete |
