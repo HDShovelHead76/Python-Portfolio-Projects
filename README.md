@@ -38,6 +38,7 @@ Python-Portfolio-Projects/
 | [Student Management System](./early-projects/student-management-mysql/) | Desktop GUI application for managing student records with MySQL backend | PyQt5, MySQL, Python 3.13 | ✅ Complete |
 | [Einstein AI Agent](./early-projects/einstein-ai-agent-langchain/) | Conversational AI with Einstein personality, Langchain agents, and Todoist integration | Django 5.2.5, Langchain, Google Gemini AI, Python 3.13 | ✅ Complete |
 | [CLI AI Agent](./early-projects/cli-ai-agent-langchain/) | Command-line AI agent for task management and general knowledge with multi-tool integration | Langchain, Google Gemini AI, Todoist API, Python 3.13 | ✅ Complete |
+| [Einstein CLI Agent](./early-projects/einstein-cli-agent/) | Interactive CLI agent with Albert Einstein personality and conversational memory | LangChain 0.3.x, Google Gemini 2.5 Flash, Python 3.x | ✅ Complete |
 
 
 ## 🛠️ Getting Started
